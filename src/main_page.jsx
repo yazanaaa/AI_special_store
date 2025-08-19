@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { STORE_URL, PHONE, WHATSAPP_LINK, TELEGRAM_LINK } from "./config";
+import { fadeUp, stagger } from "./animations";
+import { enableSmoothScrolling, smoothScrollToId, runSmokeTests as runSmokeTestsUtil } from "./utils";
 import {
   BadgeCheck,
   Rocket,
@@ -24,84 +27,24 @@ import {
 // - كل الروابط المهمة موجودة أسفل وفي الأزرار (المتجر / واتساب / تيليجرام / اتصال)
 // - لتغيير ألوان العلامة التجارية عدّل التدرجات في الطبقات ذات الـ bg-gradient
 
-const STORE_URL = "https://special3-store.com/";
-const PHONE = "0570921936";
-const WHATSAPP_LINK = `https://wa.me/${PHONE}`; // إذا لديك مفتاح دولة دولي، استبدله مثل: 966570921936
-const TELEGRAM_LINK = "https://t.me/special3_store";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
-};
-
 // =============================
 // SMOKE TESTS (basic runtime checks)
 // =============================
-function runSmokeTests() {
-  try {
-    const results = [];
-    const assert = (cond, msg) => results.push({ test: msg, pass: !!cond });
-
-    // Values
-    assert(STORE_URL === "https://special3-store.com/", "STORE_URL matches expected");
-    assert(WHATSAPP_LINK.startsWith("https://wa.me/"), "WhatsApp deep link format");
-    assert(/https:\/\/t\.me\/.+/.test(TELEGRAM_LINK), "Telegram link format");
-    assert(/\d{6,}/.test(PHONE), "Phone has at least 6 digits");
-
-    // DOM (after mount)
-    assert(typeof document !== "undefined", "document is available");
-    if (typeof document !== "undefined") {
-      assert(document.documentElement.dir === "rtl", "Document is RTL");
-      assert(document.title.includes("Special3"), "Document title set");
-      assert(!!document.querySelector(`a[href="${STORE_URL}"]`), "Store link exists in DOM");
-      assert(!!document.querySelector(`a[href="${TELEGRAM_LINK}"]`), "Telegram link exists in DOM");
-      assert(!!document.querySelector(`a[href="${WHATSAPP_LINK}"]`), "WhatsApp link exists in DOM");
-    }
-
-    // Output results
-    if (console.table) console.table(results.map(r => ({ test: r.test, pass: r.pass })));
-    const failed = results.filter(r => !r.pass);
-    if (failed.length) {
-      console.error(`Smoke tests failed (${failed.length})`, failed);
-    } else {
-      console.log("All smoke tests passed ✔");
-    }
-  } catch (e) {
-    console.error("Smoke tests crashed:", e);
-  }
-}
 
 export default function LandingPage() {
   useEffect(() => {
     document.documentElement.dir = "rtl";
     document.title = "متجر Special3 – اشتراكات رقمية أصلية";
-    runSmokeTests();
+    runSmokeTestsUtil({ STORE_URL, WHATSAPP_LINK, TELEGRAM_LINK, PHONE });
 
-    // Add smooth scrolling CSS
-    document.documentElement.style.scrollBehavior = 'smooth';
-    
+    const cleanupScroll = enableSmoothScrolling();
     return () => {
-      document.documentElement.style.scrollBehavior = '';
+      cleanupScroll();
     };
   }, []);
 
   const handleSmoothScroll = (e, targetId) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const headerHeight = 64; // Height of sticky header (h-16 = 64px)
-      const targetPosition = targetElement.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
+    smoothScrollToId(e, targetId, 64);
   };
 
   return (
