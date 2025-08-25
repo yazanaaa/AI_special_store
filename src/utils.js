@@ -26,7 +26,7 @@ export function runSmokeTests({ STORE_URL, WHATSAPP_LINK, TELEGRAM_LINK, PHONE }
     assert(typeof document !== "undefined", "document is available");
     if (typeof document !== "undefined") {
       assert(document.documentElement.dir === "rtl", "Document is RTL");
-      assert(document.title.includes("Special3"), "Document title set");
+      assert(document.title.includes("سبيشل ستور"), "Document title set");
       assert(!!document.querySelector(`a[href="${STORE_URL}"]`), "Store link exists in DOM");
       assert(!!document.querySelector(`a[href="${TELEGRAM_LINK}"]`), "Telegram link exists in DOM");
       assert(!!document.querySelector(`a[href="${WHATSAPP_LINK}"]`), "WhatsApp link exists in DOM");

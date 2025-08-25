@@ -34,7 +34,7 @@ import {
 export default function LandingPage() {
   useEffect(() => {
     document.documentElement.dir = "rtl";
-    document.title = "متجر Special3 – اشتراكات رقمية أصلية";
+    document.title = "سبيشل ستور – اشتراكات رقمية أصلية";
     runSmokeTestsUtil({ STORE_URL, WHATSAPP_LINK, TELEGRAM_LINK, PHONE });
 
     const cleanupScroll = enableSmoothScrolling();
@@ -62,10 +62,10 @@ export default function LandingPage() {
           <a href={STORE_URL} className="flex items-center gap-2 group">
             <img
               src="/logo.webp"
-              alt="شعار Special3"
+              alt="شعار سبيشل ستور"
               className="h-9 w-9 rounded-2xl object-cover ring-1 ring-white/15"
             />
-            <span className="text-lg font-bold tracking-tight">Special3 Store</span>
+            <span className="text-lg font-bold tracking-tight">سبيشل ستور</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
@@ -76,13 +76,7 @@ export default function LandingPage() {
             >
               المزايا
             </a>
-            <a 
-              href="#products" 
-              onClick={(e) => handleSmoothScroll(e, 'products')}
-              className="hover:text-white transition cursor-pointer"
-            >
-              الاشتراكات
-            </a>
+            
             <a 
               href="#whyus" 
               onClick={(e) => handleSmoothScroll(e, 'whyus')}
@@ -137,10 +131,10 @@ export default function LandingPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
                 اشتراكات رقمية أصلية
                 <br />
-                <span className="bg-gradient-to-br from-indigo-400 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent">بأفضل الأسعار والتسليم الفوري</span>
+                <span className="bg-gradient-to-br from-indigo-400 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent">بأفضل الأسعار</span>
               </h1>
               <p className="mt-5 text-white/80 max-w-xl leading-relaxed">
-                متجر <b>Special3</b> يوفّر لك اشتراكات موثوقة لمنصات الترفيه والعمل والدراسة مثل
+                                 <b>سبيشل ستور</b> يوفّر لك اشتراكات موثوقة لمنصات الترفيه والعمل والدراسة مثل
                 Netflix و Spotify و Microsoft 365 و PlayStation Plus وغيرها — بخطوات بسيطة ودعم متواصل.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -149,7 +143,7 @@ export default function LandingPage() {
                   className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-emerald-500 px-5 py-3 text-sm font-semibold shadow-lg hover:scale-[1.02] active:scale-[0.99] transition"
                 >
                   <ShoppingCart className="size-4" />
-                  <span>اذهب إلى المتجر</span>
+                                     <span>اذهب إلى سبيشل ستور</span>
                   <ArrowRight className="size-4 -scale-x-100" />
                 </a>
                 <a
@@ -171,9 +165,7 @@ export default function LandingPage() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-2 text-xs text-white/70">
-                <BadgeCheck className="size-4" /> تسليم فوري
-                <span className="mx-2">•</span>
-                <ShieldCheck className="size-4" /> ضمان وموثوقية
+                                 <ShieldCheck className="size-4" /> ضمان وموثوقية
                 <span className="mx-2">•</span>
                 <Headphones className="size-4" /> دعم سريع 24/7
               </div>
@@ -192,7 +184,7 @@ export default function LandingPage() {
                       <h3 className="text-xl font-bold">Netflix Premium</h3>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-emerald-300">تسليم فوري</p>
+                                             <p className="text-sm text-emerald-300">متاح الآن</p>
                       <p className="text-xs text-white/60">خلال دقائق</p>
                     </div>
                   </div>
@@ -235,7 +227,7 @@ export default function LandingPage() {
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-bold mb-8">ماذا نقدّم لك؟</motion.h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "تسليم فوري", desc: "تصل بيانات الاشتراك إلى بريدك/واتساب خلال دقائق.", Icon: Clock },
+                                 { title: "سرعة في التوصيل", desc: "تصل بيانات الاشتراك إلى بريدك/واتساب خلال دقائق.", Icon: Clock },
                 { title: "موثوقية وضمان", desc: "اشتراكات أصلية مع استبدال فوري عند أي مشكلة.", Icon: ShieldCheck },
                 { title: "أسعار منافسة", desc: "عروض موسمية وحزم بأسعار استثنائية.", Icon: BadgeCheck },
                 { title: "دعم عربي 24/7", desc: "نرد عليك في أي وقت عبر واتساب أو تيليجرام.", Icon: Headphones },
@@ -261,57 +253,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* الاشتراكات */}
-      <section id="products" className="py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-2xl sm:text-3xl font-bold mb-8">
-            أشهر الاشتراكات لدينا
-          </motion.h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Netflix Premium", note: "4K • شاشات متعددة" },
-              { name: "Spotify Premium", note: "بلا إعلانات • جودة عالية" },
-              { name: "Microsoft 365", note: "أوفيس كامل • مساحة سحابة" },
-              { name: "PlayStation Plus", note: "ألعاب شهرية • أونلاين" },
-              { name: "Xbox Game Pass", note: "مكتبة ضخمة • إضافات مستمرة" },
-              { name: "Disney+", note: "أفلام ومسلسلات عائلية" },
-              { name: "Shahid VIP", note: "أعمال عربية حصرية" },
-              { name: "beIN Connect", note: "رياضة مباشرة • بطولات" },
-              { name: "Canva Pro", note: "تصميم احترافي سهل" },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.03 }}
-                className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/10 transition"
-              >
-                <div className="aspect-[16/9] bg-gradient-to-br from-indigo-500/30 via-fuchsia-500/30 to-emerald-500/30 grid place-items-center">
-                  <Sparkles className="size-8 opacity-80 group-hover:rotate-6 transition" />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-semibold text-lg">{item.name}</h3>
-                    <span className="text-xs text-emerald-300">متاح الآن</span>
-                  </div>
-                  <p className="mt-1 text-sm text-white/75">{item.note}</p>
-                  <a href={STORE_URL} className="mt-3 inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-indigo-200">
-                    انتقل إلى المتجر <ArrowRight className="size-4 -scale-x-100" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* لماذا نحن */}
       <section id="whyus" className="py-16 sm:py-24 border-t border-white/10 bg-slate-950/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <h2 className="text-2xl sm:text-3xl font-bold">لماذا تختار متجر Special3؟</h2>
+                             <h2 className="text-2xl sm:text-3xl font-bold">لماذا تختار سبيشل ستور؟</h2>
               <p className="mt-4 text-white/80 leading-relaxed">
                 لأننا نركّز على السرعة والموثوقية وخدمة ما بعد البيع. هدفنا أن تحصل على اشتراكك
                 بدون تعقيد وبأفضل قيمة مقابل السعر.
@@ -333,7 +281,7 @@ export default function LandingPage() {
               <div className="mt-6 flex gap-3">
                 <a href={STORE_URL} className="inline-flex items-center gap-2 rounded-2xl bg-white/10 hover:bg-white/20 px-5 py-3 text-sm border border-white/15 transition">
                   <ShoppingCart className="size-4" />
-                  <span>زيارة المتجر</span>
+                                     <span>زيارة سبيشل ستور</span>
                 </a>
                 <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 hover:brightness-110 px-5 py-3 text-sm font-semibold shadow-lg shadow-emerald-500/20">
                   <PhoneCall className="size-4" />
@@ -373,7 +321,7 @@ export default function LandingPage() {
             {[
               {
                 q: "كيف أستلم الاشتراك؟",
-                a: "بعد إتمام الدفع عبر المتجر، نرسل لك بيانات الاشتراك فورًا إلى بريدك الإلكتروني أو عبر واتساب/تيليجرام حسب اختيارك.",
+                                 a: "بعد إتمام الدفع عبر سبيشل ستور، نرسل لك بيانات الاشتراك فورًا إلى بريدك الإلكتروني أو عبر واتساب/تيليجرام حسب اختيارك.",
               },
               {
                 q: "هل الاشتراك أصلي؟",
@@ -432,7 +380,7 @@ export default function LandingPage() {
               </a>
               <a href={STORE_URL} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
                 <div>
-                  <div className="text-sm font-semibold">المتجر</div>
+                                     <div className="text-sm font-semibold">سبيشل ستور</div>
                   <div className="text-xs text-white/70">special3-store.com</div>
                 </div>
                 <ShoppingCart className="size-5" />
@@ -446,12 +394,12 @@ export default function LandingPage() {
       <footer className="py-8 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/60">
-            © {new Date().getFullYear()} Special3 Store — جميع الحقوق محفوظة.
+            © {new Date().getFullYear()} سبيشل ستور — جميع الحقوق محفوظة.
           </p>
           <div className="flex items-center gap-3">
             <a href={WHATSAPP_LINK} target="_blank" className="text-xs text-white/70 hover:text-white underline underline-offset-4">واتساب</a>
             <a href={TELEGRAM_LINK} target="_blank" className="text-xs text-white/70 hover:text-white underline underline-offset-4">تيليجرام</a>
-            <a href={STORE_URL} className="text-xs text-white/70 hover:text-white underline underline-offset-4">المتجر</a>
+                         <a href={STORE_URL} className="text-xs text-white/70 hover:text-white underline underline-offset-4">سبيشل ستور</a>
           </div>
         </div>
       </footer>
