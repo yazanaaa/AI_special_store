@@ -61,7 +61,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href={STORE_URL} className="flex items-center gap-2 group">
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="شعار Special3"
               className="h-9 w-9 rounded-2xl object-cover ring-1 ring-white/15"
             />
