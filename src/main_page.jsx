@@ -108,14 +108,14 @@ export default function LandingPage() {
               <ShoppingCart className="size-4" />
               <span>تسوّق الآن</span>
             </a>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              className="hidden sm:inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 hover:brightness-110 px-4 py-2 text-sm font-semibold shadow-lg shadow-emerald-500/20"
-            >
-              <MessageSquare className="size-4" />
-              <span>واتساب</span>
-            </a>
+                         <a
+               href={WHATSAPP_LINK}
+               target="_blank"
+               className="hidden sm:inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 hover:brightness-110 px-4 py-2 text-sm font-semibold shadow-lg shadow-green-500/20"
+             >
+               <MessageSquare className="size-4" />
+               <span>واتساب</span>
+             </a>
           </div>
         </div>
       </header>
@@ -126,7 +126,7 @@ export default function LandingPage() {
           <motion.div variants={stagger} initial="hidden" animate="show" className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div variants={fadeUp}>
               <span className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-4">
-                <Rocket className="size-3.5" /> جديد: عروض اشتراكات موسمية
+                <Rocket className="size-3.5" /> سبيشل ستور
               </span>
               <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
                 اشتراكات رقمية أصلية
@@ -135,7 +135,7 @@ export default function LandingPage() {
               </h1>
               <p className="mt-5 text-white/80 max-w-xl leading-relaxed">
                                  <b>سبيشل ستور</b> يوفّر لك اشتراكات موثوقة لمنصات الترفيه والعمل والدراسة مثل
-                Netflix و Spotify و Microsoft 365 و PlayStation Plus وغيرها — بخطوات بسيطة ودعم متواصل.
+                                 Adobe و Freepik و Microsoft 365 و Canva وغيرها — بخطوات بسيطة ودعم متواصل.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
@@ -146,22 +146,22 @@ export default function LandingPage() {
                                      <span>اذهب إلى سبيشل ستور</span>
                   <ArrowRight className="size-4 -scale-x-100" />
                 </a>
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold"
-                >
-                  <MessageSquare className="size-4" />
-                  <span>تواصل عبر واتساب</span>
-                </a>
-                <a
-                  href={TELEGRAM_LINK}
-                  target="_blank"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold"
-                >
-                  <Send className="size-4" />
-                  <span>تيليجرام: @special3_store</span>
-                </a>
+                                 <a
+                   href={WHATSAPP_LINK}
+                   target="_blank"
+                   className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 hover:brightness-110 px-5 py-3 text-sm font-semibold shadow-lg shadow-green-500/20"
+                 >
+                   <MessageSquare className="size-4" />
+                   <span>تواصل عبر واتساب</span>
+                 </a>
+                                 <a
+                   href={TELEGRAM_LINK}
+                   target="_blank"
+                   className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 hover:brightness-110 px-5 py-3 text-sm font-semibold shadow-lg shadow-blue-500/20"
+                 >
+                   <Send className="size-4" />
+                   <span>تيليجرام: @special3_store</span>
+                 </a>
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-2 text-xs text-white/70">
@@ -181,30 +181,31 @@ export default function LandingPage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm text-white/70">الأكثر مبيعاً</p>
-                      <h3 className="text-xl font-bold">Netflix Premium</h3>
+                                             <h3 className="text-xl font-bold">Adobe Creative Cloud</h3>
                     </div>
-                    <div className="text-right">
-                                             <p className="text-sm text-emerald-300">متاح الآن</p>
-                      <p className="text-xs text-white/60">خلال دقائق</p>
-                    </div>
+                                         <div className="text-right">
+                                              <p className="text-sm text-emerald-300">متاح الآن</p>
+                       <p className="text-xs text-white/60">خلال دقائق</p>
+                       <a href="https://special3-store.com/ar/category/EdgBYA" className="text-xs text-indigo-300 hover:text-indigo-200 underline">تسوق هذا المنتج</a>
+                     </div>
                   </div>
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-                    {[
-                      "Spotify Premium",
-                      "Microsoft 365",
-                      "PlayStation Plus",
-                      "Xbox Game Pass",
-                      "Disney+",
-                      "Shahid VIP",
-                    ].map((p, i) => (
-                      <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-3 hover:bg-white/10 transition">
-                        <div className="flex items-center justify-between">
-                          <span>{p}</span>
-                          <Star className="size-4 opacity-70" />
-                        </div>
-                        <a href={STORE_URL} className="mt-2 inline-block text-xs text-indigo-300 hover:text-indigo-200">تسوّق هذا المنتج</a>
-                      </div>
-                    ))}
+                                     <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                                          {[
+                        { name: "Freepik Premium", url: "https://special3-store.com/ar/category/vZQdwG" },
+                        { name: "Microsoft 365", url: "https://special3-store.com/ar/category/rZWGnB" },
+                        { name: "Canva", url: "https://special3-store.com/ar/category/ZAmzBp" },
+                        { name: "Envato", url: "https://special3-store.com/ar/category/aZmYwn" },
+                        { name: "ChatGPT", url: "https://special3-store.com/ar/category/bjmlyx" },
+                        { name: "CapCut", url: "https://special3-store.com/ar/category/jnaqZe" },
+                      ].map((p, i) => (
+                       <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-3 hover:bg-white/10 transition">
+                         <div className="flex items-center justify-between">
+                           <span>{p.name}</span>
+                           <Star className="size-4 opacity-70" />
+                         </div>
+                         <a href={p.url} className="mt-2 inline-block text-xs text-indigo-300 hover:text-indigo-200">تسوّق هذا المنتج</a>
+                       </div>
+                     ))}
                   </div>
                 </div>
                 {/* توهج خلف الكارت */}
@@ -364,20 +365,20 @@ export default function LandingPage() {
                 </div>
                 <PhoneCall className="size-5" />
               </a>
-              <a href={WHATSAPP_LINK} target="_blank" className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
-                <div>
-                  <div className="text-sm font-semibold">واتساب</div>
-                  <div className="text-xs text-white/70">افتح محادثة الآن</div>
-                </div>
-                <MessageSquare className="size-5" />
-              </a>
-              <a href={TELEGRAM_LINK} target="_blank" className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
-                <div>
-                  <div className="text-sm font-semibold">تيليجرام</div>
-                  <div className="text-xs text-white/70">@special3_store</div>
-                </div>
-                <Send className="size-5" />
-              </a>
+                             <a href={WHATSAPP_LINK} target="_blank" className="flex items-center justify-between rounded-2xl border border-green-500/20 bg-green-500/10 p-4 hover:bg-green-500/20 transition">
+                 <div>
+                   <div className="text-sm font-semibold">واتساب</div>
+                   <div className="text-xs text-white/70">افتح محادثة الآن</div>
+                 </div>
+                 <MessageSquare className="size-5 text-green-400" />
+               </a>
+                             <a href={TELEGRAM_LINK} target="_blank" className="flex items-center justify-between rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4 hover:bg-blue-500/20 transition">
+                 <div>
+                   <div className="text-sm font-semibold">تيليجرام</div>
+                   <div className="text-xs text-white/70">@special3_store</div>
+                 </div>
+                 <Send className="size-5 text-blue-400" />
+               </a>
               <a href={STORE_URL} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
                 <div>
                                      <div className="text-sm font-semibold">سبيشل ستور</div>
@@ -404,25 +405,25 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* أزرار طافية */}
-      <div className="fixed left-4 bottom-4 flex flex-col gap-2">
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          className="rounded-full p-3 bg-emerald-500 shadow-xl hover:brightness-110 transition"
-          aria-label="WhatsApp"
-        >
-          <MessageSquare className="size-5 text-white" />
-        </a>
-        <a
-          href={TELEGRAM_LINK}
-          target="_blank"
-          className="rounded-full p-3 bg-sky-500 shadow-xl hover:brightness-110 transition"
-          aria-label="Telegram"
-        >
-          <Send className="size-5 text-white" />
-        </a>
-      </div>
+             {/* أزرار طافية */}
+       <div className="fixed left-4 bottom-4 flex flex-col gap-2">
+         <a
+           href={WHATSAPP_LINK}
+           target="_blank"
+           className="rounded-full p-3 bg-green-500 shadow-xl hover:brightness-110 transition"
+           aria-label="WhatsApp"
+         >
+           <MessageSquare className="size-5 text-white" />
+         </a>
+                   <a
+            href={TELEGRAM_LINK}
+            target="_blank"
+            className="rounded-full p-3 bg-blue-500 shadow-xl hover:brightness-110 transition"
+            aria-label="Telegram"
+          >
+            <Send className="size-5 text-white" />
+          </a>
+       </div>
     </div>
   );
 }
